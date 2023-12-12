@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    margin: 0 auto;
+    padding: 0;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+button{
+    border: none;
+}
+
+body {
+    max-width: 768px;
+    min-width: 320px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(235, 221, 221);
+
+    .visible{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hidden{
+        display: none;
+    }
+
+
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Bill</title>
+    <link rel="stylesheet" href="./styles/css/index.css">
+</head>
+<body class="body bill" id="body-bill">
+    <header>
+        <div class="topnav" id="nav-container">
+            <a class="nav-link active" href="#" id="aportante-nav">Aportantes</a>
+            <a class="nav-link" href="#" id="bill-nav">Bill</a>
+        </div>
+    </header>
+    <div class="proporcion visible" id="aportante-container">
+        <main>
+            <h1 class="title">Aportantes</h1>
+            <section class="form-section">
+                <form action="" class="form">
+                    <ul class="form-container-aportantes">  
+                        <li class="form-row">
+                            <label for="nombre" class="label-text" > 
+                                Nombre: 
+                            </label>
+                            <label for="proporcion" class="label-text" > 
+                                Proporcion: 
+                            </label>
+                        </li> 
+                        <li class="form-row">
+                            <p class="note-text">
+                                Nota: Proporcion. Cantidad de "cabezas" de las que es responsable en la cuenta una persona.
+                            </p>
+                        </li>
+                        <li class="form-row">
+                            <input class="input-box" 
+                            type="text" placeholder="ej: Santiago" id="nombre">
+                            <input class="input-box"
+                            type="number" placeholder="ej: 1"  id="proporcion">
+                        </li> 
+                        
+                    </ul>
+                        
+                    
+                </form>
+                <div class="button-container">
+                    
+                    <div id="add-button" class="button">Agregar</div>
+                
+                    <div id="clear-button" class="button">Limpiar</div>
+
+                    <div id="next-button" class="button">>></div>
+                    
+                </div>
+                </section>
+        </main>
+        <h2 class="subtitle">Lista:</h2>
+        <div id="error-aportantes-box">
+            
+        </div>
+        <div id="list-box" class="results-container">
+            <p>Clic en (+) para añadir aportante.</p>
+        </div>
+    </div>
+
+
+    <div class="bill hidden" id="bill-container">
+        <main>
+            <h1 class="title">Valor de Facturas</h1>
+            <section class="form-section">
+                <form action="" class="form">
+                    <ul class="form-container-bill">
+                        <li class="form-row" id="date-info">
+                        </li>
+                        <li class="form-row">
+                            <label for="valor-agua" class="label-text" > 
+                                Agua: 
+                            </label>
+                            <input class="input-box" placeholder="ej: $1,000,000.00" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" data-type="currency" id="valor-agua">
+                        </li>
+                        
+                        
+                        <li class="form-row">
+                            <label for="valor-gas" class="label-text">
+                                Gas:
+                            </label>
+                            <input class="input-box"  lass="input-box" placeholder="ej: $1,000,000.00" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" data-type="currency"  id="valor-gas">
+                        </li>
+                        
+                        <li class="form-row">
+
+                            <label for="valor-luz" class="label-text">Luz:
+                            </label>
+                            <input class="input-box"  lass="input-box" placeholder="ej: $1,000,000.00" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" data-type="currency"  id="valor-luz">
+                        </li>
+                    </ul>
+                        
+                    
+                </form>
+                <div class="button-container">
+                    
+                    <div id="previous-button" class="button"><<</div>
+
+                    <div id="send-button" class="button">Calcular</div>
+                
+
+                    <div id="reset-button" class="button">Limpiar</div>
+                    
+                </div>
+                </section>
+        </main>
+        <h2 class="subtitle">Cuentas Distribuidas:</h2>
+        <div id="error-bill-box">
+            
+        </div>
+        <div id="results-box" class="results-container">
+            <p>Clic en calcular para ver los valores distribuidos entre:</p>
+        </div>
+        <div id="aportantes-actuales">
+        </div>
+    </div>
+
+
+
+    <script type="module" src="index.js"></script>
+    <script type="module" src="./js/header.js"></script>
+    <script type="module" src="js/currency-format.js"></script>
+    <script type="module" src="js/bill-form.js"></script>
+    <script type="module" src="../js/data.js"></script>
+    <script type="module" src="../js/proporcion.js"></script>
+    
+</body>
+</html>
