@@ -10,7 +10,10 @@ import {
     sendForm
 } from './bill-form.js';
 
-import { makeVisible } from './header.js';
+import { 
+    makeVisible,
+    activateNavLink,
+} from './header.js';
 
 import{
     saveLocalStorage,
@@ -47,6 +50,8 @@ function addProporcionEventListeners(){
     nextBtn.addEventListener("click", (e) => {
         e.preventDefault();
         makeVisible("bill-nav");
+        const navLinkBill = document.getElementById('bill-nav');
+        activateNavLink(navLinkBill);
         printAportantesActuales();
         sendForm();
     })

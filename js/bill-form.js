@@ -11,7 +11,10 @@ import {
     saveLocalStorage
 } from './localStorage.js';
 
-import { makeVisible } from './header.js';
+import { 
+    makeVisible,
+    activateNavLink
+} from './header.js';
 
 import{ 
     aportantes,
@@ -77,8 +80,7 @@ function addBillEventListeners(){
 
     previousBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        makeVisible("aportante-nav");
-        printList();
+        previousBtnAction();
     })
 
 }
@@ -91,6 +93,13 @@ function sendForm(){
     splitBillProcess(values);
     printResults(pagoPorPersona);
     saveLocalStorage( "bill", pagoPorPersona );
+}
+
+function previousBtnAction(){
+    makeVisible("aportante-nav");
+    const navLinkAportante = document.getElementById('aportante-nav');
+    activateNavLink(navLinkAportante);
+    printList();
 }
 
 function getCurrentMonth(){

@@ -65,4 +65,5 @@ function makeVisible( tab ){
 
 export {
     makeVisible,
+    activateNavLink,
 }
